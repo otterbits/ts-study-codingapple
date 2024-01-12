@@ -27,3 +27,33 @@ var 학교 = {
 };
 학교.score[4] = false;
 학교.friend = ['Lee', 학교.teacher];
+function 내함수(x) {
+    return x * 2;
+}
+function hello(x) {
+    if (x) {
+        console.log('안녕하세요' + x);
+    }
+    else {
+        console.log('이름이 없습니다.');
+    }
+}
+function countDigit(x) {
+    return x.toString().length;
+}
+function marriagePossible(income, own, attractive) {
+    var sum = 0;
+    var monthlyIncome = Math.floor(income / 100);
+    sum += monthlyIncome;
+    if (own == true) {
+        sum += 500;
+    }
+    if (attractive == '상') {
+        sum += 100;
+    }
+    if (sum >= 600) {
+        return '결혼가능';
+    }
+}
+marriagePossible(700, false, '중');
+console.log('hello typescript');

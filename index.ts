@@ -33,3 +33,37 @@ let 학교 :{ score : (number|boolean)[], teacher : string, friend : string|stri
 }
 학교.score[4] = false;
 학교.friend = ['Lee' , 학교.teacher]
+
+function 내함수(x :number) :number { 
+  return x * 2 
+}
+
+function hello(x? :string) :void {
+  if (x){
+  console.log('안녕하세요' + x)
+  }else{
+    console.log('이름이 없습니다.')
+  }}
+
+function countDigit(x : string | number) :number{
+  return x.toString().length
+}
+
+function marriagePossible(income :number, own :boolean, attractive :string) {
+  let sum :number = 0
+  sum += income
+  
+  if (own === true){
+    sum += 500
+  }
+
+  if (attractive === '상'){
+    sum += 100
+  }
+
+  if (sum >= 600){
+    return '결혼가능'
+  }
+}
+
+console.log(marriagePossible(100, false, '상'))
