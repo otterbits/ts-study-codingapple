@@ -109,3 +109,15 @@ function getSubject(x :{ subject: (string | string[]) }) {
     }
   }
 }
+
+type PositionXY = { x :number, y :number };
+type PositionYZ = { y :number, z :number };
+type PositionXYZ = PositionXY & PositionYZ
+
+let xyz :PositionXYZ = { x : 1, y : 2, z : 3 }
+
+type homepage = { color :string, size :number, readonly position : number[]}
+
+type userInfo = { name :string, phone :number, email :string }
+
+type userInfo_ver2 = userInfo & { minor : boolean }

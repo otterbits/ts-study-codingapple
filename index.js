@@ -92,3 +92,4 @@ function getSubject(x) {
         }
     }
 }
+var xyz = { x: 1, y: 2, z: 3 };
