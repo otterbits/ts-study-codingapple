@@ -43,17 +43,52 @@ function countDigit(x) {
 }
 function marriagePossible(income, own, attractive) {
     var sum = 0;
-    var monthlyIncome = Math.floor(income / 100);
-    sum += monthlyIncome;
-    if (own == true) {
+    sum += income;
+    if (own === true) {
         sum += 500;
     }
-    if (attractive == '상') {
+    if (attractive === '상') {
         sum += 100;
     }
     if (sum >= 600) {
         return '결혼가능';
     }
 }
-marriagePossible(700, false, '중');
-console.log('hello typescript');
+console.log(marriagePossible(100, false, '상'));
+function 나의함수(x) {
+    var array = [];
+    if (typeof x === 'number') {
+        array[0] = x;
+    }
+}
+function clean(x) {
+    var result = [];
+    for (var i = 0; i < x.length; i++) {
+        if (typeof x[i] === 'string') {
+            result.push(Number(x[i]));
+        }
+        else {
+            result.push(Number(x[i]));
+        }
+    }
+    return result;
+}
+console.log(clean([123, '345']));
+var 철수쌤 = { subject: 'math' };
+var 영희쌤 = { subject: ['science', 'english'] };
+var 민수쌤 = { subject: ['science', 'art', 'korean'] };
+function getSubject(x) {
+    var key = Object.keys(x);
+    var values = Object.values(x);
+    if (typeof values === 'string') {
+        if (typeof x.subject === 'string') {
+            return x.subject;
+        }
+        else if (Array.isArray(x.subject)) {
+            return x.subject[x.subject.length - 1];
+        }
+        else {
+            return '없습니다.';
+        }
+    }
+}
