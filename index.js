@@ -93,3 +93,13 @@ function getSubject(x) {
     }
 }
 var xyz = { x: 1, y: 2, z: 3 };
+function rspGame(x) {
+    var result = [x];
+    return result;
+}
+var 자료 = {
+    name: 'kim'
+};
+function 나의함수야(a) {
+}
+나의함수야(자료.name);

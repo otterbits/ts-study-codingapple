@@ -121,3 +121,22 @@ type homepage = { color :string, size :number, readonly position : number[]}
 type userInfo = { name :string, phone :number, email :string }
 
 type userInfo_ver2 = userInfo & { minor : boolean }
+
+type RSP = '가위' | '바위' | '보'
+function rspGame (x :RSP) :RSP[]{
+  let result = [x]
+
+  return result 
+
+}
+
+var 자료 = {
+  name : 'kim'
+} as const
+
+
+function 나의함수야(a :'kim'){
+
+}
+
+나의함수야(자료.name)
