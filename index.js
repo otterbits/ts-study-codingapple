@@ -73,7 +73,6 @@ function clean(x) {
     }
     return result;
 }
-console.log(clean([123, '345']));
 var 철수쌤 = { subject: 'math' };
 var 영희쌤 = { subject: ['science', 'english'] };
 var 민수쌤 = { subject: ['science', 'art', 'korean'] };
@@ -103,3 +102,28 @@ var 자료 = {
 function 나의함수야(a) {
 }
 나의함수야(자료.name);
+var 회원정보 = {
+    name: 'kim',
+    age: 30,
+    plusOne: function (x) {
+        return x + 1;
+    },
+    changeName: function () {
+        console.log('안녕');
+    }
+};
+회원정보.plusOne(1);
+회원정보.changeName();
+var cutZero = function (words) {
+    if (words.substring(0, 1) == '0')
+        return words.replace('0', '');
+    return words;
+};
+var removeDash = function (words) {
+    return parseFloat(words.replace(/-/g, ''));
+};
+var userPhone = function (phone, cutZero, removeDash) {
+    var cutPhone = cutZero(phone);
+    return removeDash(cutPhone);
+};
+console.log(userPhone('010-1111-2222', cutZero, removeDash));

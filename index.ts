@@ -89,7 +89,6 @@ function clean(x: (number | string)[]): number[] {
   return result;
 }
 
-console.log(clean([123,'345']))
 
 let 철수쌤 = { subject : 'math' }
 let 영희쌤 = { subject : ['science', 'english'] }
@@ -140,3 +139,48 @@ function 나의함수야(a :'kim'){
 }
 
 나의함수야(자료.name)
+
+type 함수타입 = (a :string) => number;
+type addAge = (age : number) => number
+
+type 회원정보 = {
+  name : string,
+  age : number,
+  plusOne : (x : number) => number,
+  changeName : () => void
+}
+
+let 회원정보 :회원정보= {
+  name : 'kim',
+  age : 30,
+  plusOne (x){
+    return x + 1
+  },
+  changeName : () => {
+    console.log('안녕')
+  }
+}
+회원정보.plusOne(1);
+회원정보.changeName();
+
+
+type cut = (words :string) => string;
+type dash = (words :string) => number;
+type phone = (phone :string, cutZero :Function, removeDash :Function) => number;
+
+let cutZero :cut = function (words) {
+  if (words.substring(0,1) == '0')
+    return words.replace('0','')
+  return words
+}
+
+let removeDash :dash = function (words) {
+  return parseFloat(words.replace(/-/g ,''))
+}
+
+let userPhone :phone = function (phone, cutZero, removeDash) {
+  const cutPhone = cutZero(phone)
+  return removeDash(cutPhone)
+}
+
+console.log(userPhone('010-1111-2222', cutZero, removeDash))
