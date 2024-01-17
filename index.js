@@ -1,3 +1,12 @@
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 var 이름 = "otter";
 var 나이 = 29;
 var 출생지역 = "진주";
@@ -127,3 +136,72 @@ var userPhone = function (phone, cutZero, removeDash) {
     return removeDash(cutPhone);
 };
 console.log(userPhone('010-1111-2222', cutZero, removeDash));
+var Person = /** @class */ (function () {
+    function Person(name) {
+        this.name = name,
+            this.age = 20;
+    }
+    return Person;
+}());
+var Car = /** @class */ (function () {
+    function Car(model, price) {
+        this.model = model;
+        this.price = price;
+    }
+    Car.prototype.tax = function () {
+        return this.price * 0.1;
+    };
+    return Car;
+}());
+var car1 = new Car('소나타', 3000);
+console.log(car1);
+console.log(car1.tax());
+var students = { name: 'kim' };
+var teachers = { name: 'kim', age: 20 };
+var goods = { brand: 'Samsung', serialNumber: 1360, model: ['TV', 'phone'] };
+var baskets = [{ product: '청소기', price: 7000, card: true }, { product: '삼다수', price: 800, card: false }];
+var homework = {
+    plus: function (x, y) {
+        return x + y;
+    },
+    minus: function (x, y) {
+        return x - y;
+    }
+};
+var person = { student: true, age: 20 };
+function 함수(_a) {
+    var student = _a.student, age = _a.age;
+    console.log(student, age);
+}
+함수({ student: true, age: 20 });
+function max() {
+    var num = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        num[_i] = arguments[_i];
+    }
+    var maxNum = num[0];
+    for (var i = 0; i < num.length; i++)
+        if (num[i] > maxNum) {
+            maxNum = num[i];
+        }
+    return maxNum;
+}
+console.log(max(1, 2, 3, 3, 5));
+function userInfo(_a) {
+    var user = _a.user, comment = _a.comment, admin = _a.admin;
+    console.log.apply(console, __spreadArray(__spreadArray([user], comment, false), [admin], false));
+}
+userInfo({ user: 'kim', comment: [3, 5, 4], admin: false });
+function selectWine(_a) {
+    var content = _a[0], alcohol = _a[1], drink = _a[2];
+    console.log(content, alcohol, drink);
+}
+selectWine([40, 'wine', false]);
+function 함수1(parameter) {
+    if (typeof parameter == "string") {
+        console.log(parameter);
+    }
+    else {
+        console.log(parameter);
+    }
+}

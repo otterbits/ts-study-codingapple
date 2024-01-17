@@ -184,3 +184,114 @@ let userPhone :phone = function (phone, cutZero, removeDash) {
 }
 
 console.log(userPhone('010-1111-2222', cutZero, removeDash))
+
+
+class Person {
+  name :string;
+  age :number;
+
+  constructor (name :string){
+    this.name = name,
+    this.age = 20;
+  }
+
+}
+
+class Car {
+  model :string;
+  price :number;
+
+  constructor (model :string, price :number){
+  this.model = model;
+  this.price = price;
+  }
+  tax() :number{
+    return this.price * 0.1
+  }}
+
+let car1 = new Car('소나타', 3000)
+console.log(car1)
+console.log(car1.tax())
+
+
+interface student {
+  name :string
+}
+
+interface teacher {
+  name :string,
+  age :number
+}
+let students :student= { name : 'kim' }
+let teachers :teacher= { name : 'kim', age : 20 }
+
+interface good {
+  brand :string,
+  serialNumber :number,
+  model :string[]
+}
+let goods :good = { brand : 'Samsung', serialNumber : 1360, model : ['TV', 'phone'] }
+
+interface basket extends card {
+  product :string,
+  price :number
+  }
+
+interface card {
+  card : boolean
+}
+
+let baskets :basket[] = [ { product : '청소기', price : 7000, card : true }, { product : '삼다수', price : 800, card : false } ] 
+
+interface home {
+  plus : (x:number, y:number) => number;
+  minus : (x:number, y:number) => number;
+}
+
+let homework :home = {
+  plus(x,y){
+    return x+y
+  },
+  minus(x, y){
+    return x-y
+  }
+}
+
+let person = { student : true, age : 20 }
+
+function 함수({student, age} :{student :boolean, age:number}){
+  console.log(student, age)
+}
+함수({ student : true, age : 20 })
+
+function max(...num :number[]) :number{
+  let maxNum = num[0]
+  for(let i = 0; i<num.length; i++)
+    if (num[i] > maxNum){
+      maxNum = num[i]
+    }
+    return maxNum
+}
+
+console.log(max(1,2,3,3,5))
+
+function userInfo({user, comment, admin}: {user : string, comment :number[], admin : boolean}) :void{
+  console.log(user, ...comment, admin)
+}
+userInfo( { user : 'kim', comment : [3,5,4], admin : false } )
+
+function selectWine([content, alcohol, drink] : (number|string|boolean)[]) :void{
+  console.log(content, alcohol, drink )
+}
+selectWine( [40, 'wine', false] )
+
+type Fish = {swim :string}
+type Bird = {fly :string}
+
+function 함수1(parameter: string) {
+  if ( typeof parameter == "string"){
+    console.log(parameter)
+  } else {
+    console.log(parameter)
+  }
+}
