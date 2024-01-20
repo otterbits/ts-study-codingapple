@@ -295,3 +295,11 @@ function 함수1(parameter: string) {
     console.log(parameter)
   }
 }
+
+function 함수2(parameter: string) {
+  if ( typeof parameter == "string"){
+    console.log(parameter)
+  } else {
+    console.log(parameter)
+  }
+}
