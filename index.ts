@@ -303,3 +303,11 @@ function 함수2(parameter: string) {
     console.log(parameter)
   }
 }
+
+function 함수3(parameter: string) {
+  if ( typeof parameter == "string"){
+    console.log(parameter)
+  } else {
+    console.log(parameter)
+  }
+}
